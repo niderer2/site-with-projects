@@ -20,6 +20,16 @@ body{
     font-size: 2.5rem;
 }
 
+.header_art{
+    position: absolute;
+    z-index: 100;
+    left: 15px;
+    top: 5px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%
+}
+
 .header_txt_1{
     position: absolute;
     z-index: 200;
