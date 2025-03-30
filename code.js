@@ -13,6 +13,7 @@ function addInfo(name, txt, src, link_1, link_2) {
   const textDiv = document.createElement("div");
   textDiv.className = `${name}_txt`;
   textDiv.textContent = txt || "Нет текста";
+  textDiv.style.fontSize = "1.7rem";
 
   const link1Div = document.createElement("div");
   link1Div.className = `${name}_link_1`;
@@ -61,15 +62,16 @@ function addInfo(name, txt, src, link_1, link_2) {
 
 
 window.onload = function() {
-    txt = "Этот же сайт. Путеводитель по всем остальным сайтам. В нём вы найдёте общюю информацию а также ссылку на гитхаб и на сайт если это сайт. Это реквием?"
+    txt = "Этот же сайт. Путеводитель по всем остальным сайтам. В нём вы найдёте общую информацию, а также ссылку на GitHub и на сайт, если это сайт. Это реквием?"
     addInfo("site_with_projects", txt, "Screenshot_1.png", "https://github.com/niderer2/site-with-projects", "https://niderer2.github.io/site-with-projects/");
-
-    txt = 'Танчики. Ничем не примечательная игра. Работает строго на пк, управление: движение - AD, стрельба - проблел. Цель игры - набрать как можно больше очков. Это самая первая игра на js'
+    
+    txt = 'Танчики. Ничем не примечательная игра. Работает строго на ПК, управление: движение — AD, стрельба — пробел. Цель игры — набрать как можно больше очков. Это самая моя первая игра на JS.'
     addInfo("for_in_tanks", txt, "images.png", "https://github.com/niderer2/for-in-tanks.githab.io", "https://niderer2.github.io/for-in-tanks.githab.io/");
-
-    txt = 'Игра "собери букет" создана специально на 8-ое марта девочкамиз моего класса. Они её не оценили.. Игра спасобна коррекно работать как на пк так и на телефонах. В правом верхнем углу есть кнопка в нём есть обучение.'
+    
+    txt = 'Игра "Собери букет" создана специально на 8 Марта для девочек из моего класса. Они её не оценили... Игра способна корректно работать как на ПК, так и на телефонах. В правом верхнем углу есть кнопка, в ней есть обучение.'
     addInfo("bouquet_by_Edgar_Nid", txt, "Screenshot_2.png", "https://github.com/niderer2/bouquet_by_Edgar_Nid", "https://niderer2.github.io/bouquet_by_Edgar_Nid/");
-
-    txt = 'Программа спасобна создать кастомные множесвтва Мандельброта. Вся информация есть в README и в пользовательском соглашении'
+    
+    txt = 'Программа способна создать кастомные множества Мандельброта. Вся информация есть в README и в пользовательском соглашении.'
     addInfo("Mandelbrot_set", txt, "Множество.jpg", "https://github.com/niderer2/Mandelbrot_set", "");
+    
 }
