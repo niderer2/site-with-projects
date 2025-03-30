@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(255, 239, 215);
+}
+
+.header_body{
+    z-index: 000;
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    top:0px;
+    left:0px;
+    background-color: rgb(255, 197, 109);
+}
+
+.header_txt{
+    position: absolute;
+    z-index: 100;
+    left: 100px;
+    top: 10px;
+    font-size: 2.5rem;
+}
+
+.header_txt_1{
+    position: absolute;
+    z-index: 200;
+    left: 300px;
+    top: 10px;
+    font-size: 1.5rem;
+}
+
+.header_txt_2{
+    position: absolute;
+    z-index: 200;
+    left: 300px;
+    top: 35px;
+    font-size: 1.2rem;
+}
+
+.site_with_projects{
+    top: 100px;
+}
+
+.for_in_tanks{
+    top: 250px;
+}
+
+.bouquet_by_Edgar_Nid{
+    top: 400px;
+}
+
+.Mandelbrot_set{
+    top: 550px;
+}
