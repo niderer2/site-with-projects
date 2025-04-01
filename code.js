@@ -78,7 +78,7 @@ window.onload = function () {
   let tab = 200;
   if (width < 550){
     sep = 300;
-    tab = 300;
+    tab = 350;
   } else if (width < 800) {
     sep = 220;
     tab = 200;
