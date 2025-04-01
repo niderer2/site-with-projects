@@ -3,18 +3,14 @@ function addInfo(name, txt, src, link_1, link_2) {
     console.error("document.body не доступен");
     return;
   }
-
-
   const container = document.createElement("div");
   container.className = name;
   container.style.position = "absolute";
   container.style.width = "80vw";
-
   const textDiv = document.createElement("div");
   textDiv.className = `${name}_txt`;
   textDiv.textContent = txt || "Нет текста";
   textDiv.style.fontSize = "1.7rem";
-
   const link1Div = document.createElement("div");
   link1Div.className = `${name}_link_1`;
   if (link_1) {
@@ -25,7 +21,6 @@ function addInfo(name, txt, src, link_1, link_2) {
   } else {
     link1Div.textContent = "Нет ссылки на гитхаб";
   }
-
   const link2Div = document.createElement("div");
   link2Div.className = `${name}_link_2`;
   if (link_2) {
@@ -36,42 +31,66 @@ function addInfo(name, txt, src, link_1, link_2) {
   } else {
     link2Div.textContent = "Нет ссылки на сайт";
   }
-
   const img = document.createElement("img");
   img.className = `${name}_img`;
-  if (src) {
-    img.src = src;
-  } else {
-    img.src = "https://png.pngtree.com/thumb_back/fw800/background/20230610/pngtree-picture-of-a-blue-bird-on-a-black-background-image_2937385.jpg", "https://github.com/niderer2/site-with-projects"; // Заглушка
-  }
+  img.src = src || "https://png.pngtree.com/thumb_back/fw800/background/20230610/pngtree-picture-of-a-blue-bird-on-a-black-background-image_2937385.jpg";
   img.alt = "image";
   img.style.width = "100px";
   img.style.height = "100px";
   img.style.position = "absolute";
   img.style.top = "0px";
   img.style.right = "-120px";
-
   container.appendChild(textDiv);
   container.appendChild(link1Div);
   container.appendChild(link2Div);
   container.appendChild(img);
-
   document.body.appendChild(container);
-  console.log("Элемент добавлен в body", container);
 }
 
+window.onload = function () {
+  let txt;
+  txt = "Этот же сайт. Путеводитель по всем остальным сайтам. В нём вы найдёте общую информацию, а также ссылку на GitHub и на сайт, если это сайт. Это реквием?";
+  addInfo("site_with_projects", txt, "Screenshot_1.png", 
+          "https://github.com/niderer2/site-with-projects", 
+          "https://niderer2.github.io/site-with-projects/");
+  txt = 'Танчики. Ничем не примечательная игра. Работает строго на ПК, управление: движение — AD, стрельба — пробел. Цель игры — набрать как можно больше очков. Это самая моя первая игра на JS.';
+  addInfo("for_in_tanks", txt, "images.png", 
+          "https://github.com/niderer2/for-in-tanks.githab.io", 
+          "https://niderer2.github.io/for-in-tanks.githab.io/");
+  txt = 'Игра "Собери букет" создана специально на 8 Марта для девочек из моего класса. Они её не оценили... Игра способна корректно работать как на ПК, так и на телефонах. В правом верхнем углу есть кнопка, в ней есть обучение.';
+  addInfo("bouquet_by_Edgar_Nid", txt, "Screenshot_2.png", 
+          "https://github.com/niderer2/bouquet_by_Edgar_Nid", 
+          "https://niderer2.github.io/bouquet_by_Edgar_Nid/");
+  txt = 'Программа способна создать кастомные множества Мандельброта. Вся информация есть в README и в пользовательском соглашении.';
+  addInfo("Mandelbrot_set", txt, "Множество.jpg", 
+          "https://github.com/niderer2/Mandelbrot_set", 
+          "");
 
-window.onload = function() {
-    txt = "Этот же сайт. Путеводитель по всем остальным сайтам. В нём вы найдёте общую информацию, а также ссылку на GitHub и на сайт, если это сайт. Это реквием?"
-    addInfo("site_with_projects", txt, "Screenshot_1.png", "https://github.com/niderer2/site-with-projects", "https://niderer2.github.io/site-with-projects/");
-    
-    txt = 'Танчики. Ничем не примечательная игра. Работает строго на ПК, управление: движение — AD, стрельба — пробел. Цель игры — набрать как можно больше очков. Это самая моя первая игра на JS.'
-    addInfo("for_in_tanks", txt, "images.png", "https://github.com/niderer2/for-in-tanks.githab.io", "https://niderer2.github.io/for-in-tanks.githab.io/");
-    
-    txt = 'Игра "Собери букет" создана специально на 8 Марта для девочек из моего класса. Они её не оценили... Игра способна корректно работать как на ПК, так и на телефонах. В правом верхнем углу есть кнопка, в ней есть обучение.'
-    addInfo("bouquet_by_Edgar_Nid", txt, "Screenshot_2.png", "https://github.com/niderer2/bouquet_by_Edgar_Nid", "https://niderer2.github.io/bouquet_by_Edgar_Nid/");
-    
-    txt = 'Программа способна создать кастомные множества Мандельброта. Вся информация есть в README и в пользовательском соглашении.'
-    addInfo("Mandelbrot_set", txt, "Множество.jpg", "https://github.com/niderer2/Mandelbrot_set", "");
-    
-}
+
+  let elements = [
+  document.querySelector(".site_with_projects"),
+  document.querySelector(".for_in_tanks"),
+  document.querySelector(".bouquet_by_Edgar_Nid"),
+  document.querySelector(".Mandelbrot_set"),
+  ];
+  let width = document.documentElement.clientWidth;
+  let sep = 100;
+  let tab = 200;
+  if (width < 550){
+    sep = 300;
+    tab = 300;
+  } else if (width < 800) {
+    sep = 220;
+    tab = 200;
+  } else if (width < 1200) {
+    sep = 220;
+  }
+  for (let el of elements) {
+    console.log(el);
+  }
+  for (let el of elements) {
+    el.style.position = "absolute";
+    el.style.top = `${sep}px`;
+    sep += tab;
+  };
+};

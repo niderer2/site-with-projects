@@ -46,18 +46,44 @@ body{
     font-size: 1.2rem;
 }
 
-.site_with_projects{
-    top: 100px;
+
+@media (max-width: 550px) {
+    .site_with_projects_img {
+        display: none;
+    }
+
+    .for_in_tanks_img{
+        display: none;
+    }
+
+    .bouquet_by_Edgar_Nid{
+        display: none;
+    }
+
+    .Mandelbrot_set_img{
+        display: none;
+    }
 }
 
-.for_in_tanks{
-    top: 250px;
+
+@media (max-width: 1200px) {
+    .header_txt_1{
+        left: 10px;
+        top: 100px;
+    }
+    
+    .header_txt_2{
+        left: 10px;
+        top: 150px;
+    }
 }
 
-.bouquet_by_Edgar_Nid{
-    top: 400px;
-}
-
-.Mandelbrot_set{
-    top: 550px;
+@media (max-width: 800px) {
+    .header_txt_1{
+        top: 100px;
+    }
+    
+    .header_txt_2{
+        top: 170px;
+    }
 }
